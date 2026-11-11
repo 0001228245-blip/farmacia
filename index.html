@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | Farmácia Vale Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <rect class="m-bg" width="40" height="40" rx="11"></rect>
+    <path class="m-cross" d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z"></path>
+  </symbol>
+</svg>
+<div id="view-inicio">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Farmácia Vale Verde, início">
+        <svg aria-hidden="true"><use href="#mark"></use></svg>
+        <span>Vale Verde<small>Farmácia</small></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a class="link" href="#servicos">Serviços</a>
+        <a class="link" href="#entrega">Entrega</a>
+        <a class="link" href="#horarios">Horários</a>
+        <a class="link" href="#contato">Contato</a>
+        <a class="btn btn-ghost btn-sm" href="cliente.html">Área do cliente</a>
+        <a class="btn btn-primary btn-sm" href="funcionario.html">Área do funcionário</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Farmácia 24 horas</span>
+          <h1>Sua saúde em <em>boas mãos</em>, todos os dias.</h1>
+          <p class="lead">Medicamentos, orientação farmacêutica e entrega rápida a qualquer hora do dia ou da noite.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#servicos">Conhecer os serviços</a>
+            <a class="btn btn-ghost" href="#horarios">Ver horários</a>
+          </div>
+        </div>
+        <div class="hero-art hero-photo" aria-hidden="true">
+          <img src="farmacia.jpg" alt="Corredor de uma farmácia com prateleiras de medicamentos">
+          <div class="status-card" role="status">
+            <span class="pulse" id="pulse"></span>
+            <div>
+              <strong id="open-title">Aberta 24 horas</strong>
+              <span id="open-sub">Atendimento todos os dias, a qualquer hora</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Serviços</span>
+          <h2>Do balcão à sua casa</h2>
+          <p>Atendimento completo para você e sua família, sempre com orientação de farmacêutico.</p>
+        </div>
+        <div class="grid-services">
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7Z"/><path d="m8.5 8.5 7 7"/></svg></div>
+            <h3>Atendimento farmacêutico</h3>
+            <p>Tire dúvidas sobre dose, horário e interações antes de levar o medicamento para casa.</p>
+          </article>
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h3>Pressão e glicemia</h3>
+            <p>Aferição de pressão arterial e teste de glicemia capilar, com registro para levar ao seu médico.</p>
+          </article>
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+            <h3>Entrega em domicílio</h3>
+            <p>Receba em casa com embalagem lacrada e acompanhamento do pedido pelo atendimento.</p>
+          </article>
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9.5V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+            <h3>Manipulação</h3>
+            <p>Fórmulas preparadas conforme a receita, com conferência do farmacêutico responsável.</p>
+          </article>
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3a1 1 0 0 1-1.4 0L4.7 16.7a1 1 0 0 1 0-1.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div>
+            <h3>Aplicação de injetáveis</h3>
+            <p>Aplicação de medicamentos injetáveis prescritos, em sala reservada e com material descartável.</p>
+          </article>
+          <article class="service">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="m19 5-14 14"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+            <h3>Clube de descontos</h3>
+            <p>Cadastro gratuito com preços especiais em itens selecionados e lembrete de uso contínuo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="entrega">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Entrega</span>
+          <h2>Pedir é simples</h2>
+          <p>Medicamentos de venda sob prescrição exigem receita válida, que é conferida antes do envio.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Envie o pedido</h3>
+            <p>Informe os produtos e, quando necessário, a foto da receita pelo telefone da loja.</p>
+          </li>
+          <li>
+            <h3>Confirmação</h3>
+            <p>O farmacêutico confere a receita, informa o valor total e o prazo de entrega.</p>
+          </li>
+          <li>
+            <h3>Receba em casa</h3>
+            <p>O entregador leva o pedido lacrado. Pagamento na entrega ou antecipado.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section alt" id="horarios">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Horários e contato</span>
+          <h2>Estamos sempre abertos</h2>
+        </div>
+        <div class="split">
+          <div class="panel" id="contato">
+            <h3>Horário de atendimento</h3>
+            <table class="hours" id="hours-table">
+              <tbody>
+                <tr data-d="1"><td>Segunda-feira</td><td>24 horas</td></tr>
+                <tr data-d="2"><td>Terça-feira</td><td>24 horas</td></tr>
+                <tr data-d="3"><td>Quarta-feira</td><td>24 horas</td></tr>
+                <tr data-d="4"><td>Quinta-feira</td><td>24 horas</td></tr>
+                <tr data-d="5"><td>Sexta-feira</td><td>24 horas</td></tr>
+                <tr data-d="6"><td>Sábado</td><td>24 horas</td></tr>
+                <tr data-d="0"><td>Domingo</td><td>24 horas</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <h3>Fale com a gente</h3>
+            <dl class="contact-list">
+              <div>
+                <dt>Telefone e WhatsApp</dt>
+                <dd class="copy-row" style="margin:0"><span class="v" id="fone">(31) 99999-9999</span><button class="copy-btn" type="button" id="copy-fone">Copiar</button></dd>
+              </div>
+              <div>
+                <dt>Endereço</dt>
+                <dd class="v" style="margin:0">Rua senai , 67 · matozinhos</dd>
+              </div>
+              <div>
+                <dt>E-mail</dt>
+                <dd class="v" style="margin:0">GNSHEIKANNE@senaimgaluno.com.br</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-row">
+        <a class="logo" href="index.html" style="color:var(--deep-fg)">
+          <svg aria-hidden="true"><use href="#mark"></use></svg>
+          <span>Vale Verde</span>
+        </a>
+        <a href="cliente.html">Área do cliente</a>
+        <a href="funcionario.html">Área do funcionário</a>
+      </div>
+      <p>Farmacêutico(a) responsável: Nome Sobrenome · CRF-UF nº 00000 · CNPJ 67.676.767/0001-00 · Autorização de funcionamento ANVISA nº 6.76767-7</p>
+      <p>Medicamentos podem causar efeitos indesejáveis. Siga a orientação de seu médico ou farmacêutico. Em caso de dúvida, procure um profissional de saúde.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ LOGIN DOS FUNCIONÁRIOS ============ -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do cliente | Farmácia Vale Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <rect class="m-bg" width="40" height="40" rx="11"></rect>
+    <path class="m-cross" d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z"></path>
+  </symbol>
+</svg>
+<div id="view-cliente" class="login">
+  <aside class="login-brand">
+    <a class="logo" href="index.html"><svg aria-hidden="true"><use href="#mark"></use></svg><span>Vale Verde<small>Área do cliente</small></span></a>
+    <div>
+      <h1>Cuidado e praticidade para você.</h1>
+      <p class="lede">Entre na sua conta para acompanhar seus pedidos e aproveitar os serviços da Farmácia Vale Verde, aberta 24 horas.</p>
+    </div>
+    <ul class="points">
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Acompanhe seus pedidos</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Consulte seus dados</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Atendimento 24 horas</li>
+    </ul>
+  </aside>
+  <div class="login-side">
+    <div class="login-card">
+      <a class="back-link" href="index.html">← Voltar ao site</a>
+      <h2>Login do cliente</h2>
+      <p class="sub">Acesse sua conta da Farmácia Vale Verde.</p>
+      <form id="customer-login-form">
+        <div class="field"><label for="cliente-email">E-mail</label><div class="control"><input id="cliente-email" type="email" required autocomplete="email" placeholder="seuemail@exemplo.com"></div></div>
+        <div class="field"><label for="cliente-senha">Senha</label><div class="control"><input id="cliente-senha" type="password" required minlength="6" autocomplete="current-password" placeholder="Sua senha"></div></div>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+        <p class="form-message" id="customer-login-message" role="status"></p>
+      </form>
+      <p class="login-foot">Ainda não possui uma conta? Procure o atendimento da farmácia para realizar seu cadastro.</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

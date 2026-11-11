@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do funcionário | Farmácia Vale Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <rect class="m-bg" width="40" height="40" rx="11"></rect>
+    <path class="m-cross" d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z"></path>
+  </symbol>
+</svg>
+<div id="view-entrar" class="login">
+  <aside class="login-brand">
+    <a class="logo" href="index.html">
+      <svg aria-hidden="true"><use href="#mark"></use></svg>
+      <span>Vale Verde<small>Área do funcionário</small></span>
+    </a>
+    <div>
+      <h1>Bom turno começa aqui.</h1>
+      <p class="lede">Entre para consultar o estoque, acompanhar receitas e organizar as entregas do dia.</p>
+    </div>
+    <ul class="points">
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Controle de estoque e validade</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Receitas e atendimentos do turno</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Entregas em rota</li>
+    </ul>
+  </aside>
+
+  <div class="login-side">
+    <div class="login-card">
+      <a class="back-link" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Voltar ao site
+      </a>
+      <h2>Entrar</h2>
+      <p class="sub">Entre com a unidade, sua matrícula e a senha de funcionário.</p>
+
+
+      <div class="inline-actions">
+        <button class="btn btn-ghost btn-sm" type="button" id="show-employee-register">Cadastrar funcionário</button>
+      </div>
+      <form id="employee-register" class="form-extra" hidden>
+        <h3>Cadastro de funcionário</h3>
+        <div class="form-grid">
+          <div class="field"><label for="func-nome">Nome completo</label><input id="func-nome" required placeholder="Nome completo"></div>
+          <div class="field"><label for="func-cpf">CPF</label><input id="func-cpf" required inputmode="numeric" placeholder="000.000.000-00"></div>
+          <div class="field"><label for="func-email">E-mail</label><input id="func-email" type="email" required placeholder="nome@email.com"></div>
+          <div class="field"><label for="func-telefone">Telefone</label><input id="func-telefone" type="tel" required placeholder="(00) 00000-0000"></div>
+          <div class="field"><label for="func-cargo">Cargo</label><input id="func-cargo" required placeholder="Ex.: Atendente"></div>
+          <div class="field"><label for="func-salario">Salário (R$)</label><input id="func-salario" type="number" min="0" step="0.01" required placeholder="Ex.: 2500"></div>
+          <div class="field"><label for="func-turno">Turno</label><select id="func-turno" required><option value="">Selecione</option><option>Manhã</option><option>Tarde</option><option>Noite</option><option>Madrugada</option><option>Escala 12x36</option></select></div>
+          <div class="field"><label for="func-endereco">Endereço</label><input id="func-endereco" required placeholder="Rua, número, bairro e cidade"></div>
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Enviar cadastro</button>
+        <p class="form-message" id="employee-register-message" role="status"></p>
+      </form>
+
+      <form id="login-form" novalidate>
+        <div class="field" id="f-unidade">
+          <label for="unidade">Unidade</label>
+          <div class="control">
+            <svg class="lead-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+            <select id="unidade" name="unidade" aria-describedby="e-unidade">
+              <option value="">Selecione a unidade</option>
+              <option value="Unidade Centro">Unidade Centro</option>
+              <option value="Unidade Norte">Unidade Norte</option>
+              <option value="Unidade Sul">Unidade Sul</option>
+            </select>
+          </div>
+          <p class="err" id="e-unidade" role="alert"></p>
+        </div>
+
+        <div class="field" id="f-mat">
+          <label for="mat">Matrícula</label>
+          <div class="control">
+            <svg class="lead-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input id="mat" name="mat" type="text" inputmode="numeric" autocomplete="username" placeholder="Ex.: 104582" aria-describedby="e-mat">
+          </div>
+          <p class="err" id="e-mat" role="alert"></p>
+        </div>
+
+        <div class="field" id="f-senha">
+          <label for="senha">Senha</label>
+          <div class="control">
+            <svg class="lead-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <input id="senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha" aria-describedby="e-senha">
+            <button class="eye" type="button" id="toggle-pw" aria-label="Mostrar senha" aria-pressed="false">
+              <svg viewBox="0 0 24 24" id="eye-ico"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <p class="err" id="e-senha" role="alert"></p>
+        </div>
+
+        <div class="row-between">
+          <label class="check"><input type="checkbox" id="lembrar"> Lembrar minha matrícula</label>
+          <button class="linkbtn" type="button" id="forgot">Esqueci a senha</button>
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="submit-btn"><span id="submit-label">Entrar</span></button>
+        <div class="notice info" id="forgot-msg" hidden>Para redefinir a senha, procure o gerente da sua unidade.</div>
+      </form>
+      <p class="login-foot">Acesso restrito a colaboradores da Farmácia Vale Verde.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ LOGIN DO CLIENTE ============ -->
+<div id="view-painel" hidden>
+  <header class="app-top">
+    <div class="wrap">
+      <a class="logo" href="#painel">
+        <svg aria-hidden="true"><use href="#mark"></use></svg>
+        <span>Vale Verde<small id="p-unit">Unidade</small></span>
+      </a>
+      <div class="who">
+        <span class="chip"><strong id="p-mat">Matrícula</strong><span>Sessão ativa</span></span>
+        <button class="btn btn-ghost btn-sm" type="button" id="logout">Sair</button>
+      </div>
+    </div>
+  </header>
+  <main class="app-main">
+    <div class="wrap">
+      <h1 id="p-greet">Bom dia</h1>
+      <p class="date" id="p-date"></p>
+
+      <div class="tiles">
+        <div class="tile hot"><div class="k">Atendimentos hoje</div><div class="n">128</div><div class="d">meta do dia: 150</div></div>
+        <div class="tile"><div class="k">Receitas aguardando</div><div class="n">7</div><div class="d">2 com retenção</div></div>
+        <div class="tile"><div class="k">Estoque baixo</div><div class="n">12</div><div class="d">3 em nível crítico</div></div>
+        <div class="tile"><div class="k">Entregas em rota</div><div class="n">5</div><div class="d">próxima chega em 12 min</div></div>
+      </div>
+
+      <div class="cols">
+        <section class="card">
+          <h2>Reposição de estoque</h2>
+          <div class="scroll-x">
+            <table class="data">
+              <thead><tr><th>Produto</th><th class="num">Em estoque</th><th class="num">Mínimo</th><th>Situação</th></tr></thead>
+              <tbody>
+                <tr><td>Dipirona 500 mg, cx. com 10 comp.</td><td class="num">4</td><td class="num">20</td><td><span class="pill crit">Crítico</span></td></tr>
+                <tr><td>Amoxicilina 500 mg, cx. com 21 cáps.</td><td class="num">3</td><td class="num">12</td><td><span class="pill crit">Crítico</span></td></tr>
+                <tr><td>Soro fisiológico 0,9%, 500 ml</td><td class="num">6</td><td class="num">15</td><td><span class="pill crit">Crítico</span></td></tr>
+                <tr><td>Losartana 50 mg, cx. com 30 comp.</td><td class="num">9</td><td class="num">15</td><td><span class="pill low">Baixo</span></td></tr>
+                <tr><td>Protetor solar FPS 50, 120 ml</td><td class="num">8</td><td class="num">10</td><td><span class="pill low">Baixo</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Tarefas do turno</h2>
+          <ul class="tasks" id="tasks">
+            <li><label><input type="checkbox"><span>Conferir temperatura da geladeira de vacinas</span></label></li>
+            <li><label><input type="checkbox"><span>Registrar controlados no livro</span></label></li>
+            <li><label><input type="checkbox"><span>Conferir validades da prateleira de xaropes</span></label></li>
+            <li><label><input type="checkbox"><span>Separar pedidos de entrega da tarde</span></label></li>
+            <li><label><input type="checkbox"><span>Fechar o caixa e passar o turno</span></label></li>
+          </ul>
+          <p class="progress" id="progress-text">0 de 5 concluídas</p>
+          <div class="bar" aria-hidden="true"><i id="progress-bar"></i></div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
